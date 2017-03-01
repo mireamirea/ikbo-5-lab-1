@@ -21,7 +21,6 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
-
     while (fread(&p , sizeof(struct reg),1, fp))
         printf("%d %s %f\n", p.num, p.str, p.numf);
 
