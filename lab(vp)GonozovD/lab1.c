@@ -18,7 +18,7 @@ FILE *fp;
 fp = fopen(argv[1], "rb");
 if (fp == NULL) { // открыть файл удалось?
 printf("Don't open");
-return 0;
+return 1;
 }
 
 
@@ -32,5 +32,5 @@ rewind(fp);
 printf("Size in bytes : %d\n", lSize);
 
 fclose(fp);
-
+return 0;
 }
