@@ -16,9 +16,8 @@ struct reg p;
 FILE *fp;
 
 fp = fopen(argv[1], "rb");
- fp = fopen("data.dat", "rb");
 if (fp == NULL) { // открыть файл удалось?
-printf("Ne ydalos otkrit");
+printf("Don't open");
 return 0;
 }
 
