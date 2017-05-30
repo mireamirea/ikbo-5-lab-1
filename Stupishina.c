@@ -24,7 +24,6 @@ while (File==NULL) {
     scanf("%s", name);
     File=fopen(name, "rb");
 }
-printf("Your data:\n");
 while (fread(&pack, sizeof(PACK), 1, File)) {
     printf("%2d | %s | %f \n", pack.x, pack.c, pack.y);
     i++;
