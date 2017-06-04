@@ -9,26 +9,24 @@ float y;
 
 int main(int argc, char *argv[]) {
 FILE *File;
-int i=0;
 char name[255];
 PACK pack;
 if (argc != 2) {
-    printf("Enter file name.\n");
-    scanf("%s", name);
+printf("Enter file name.\n");
+scanf("%s", name);
 }
 else
-    strcpy(name, argv[1]);
+strcpy(name, argv[1]);
 File = fopen(name, "rb");
 while (File==NULL) {
-    printf("Error. File not found.\n");
-    scanf("%s", name);
-    File=fopen(name, "rb");
+printf("Error. File not found.\n");
+scanf("%s", name);
+File=fopen(name, "rb");
 }
 while (fread(&pack, sizeof(PACK), 1, File)) {
-    printf("%2d | %s | %f \n", pack.x, pack.c, pack.y);
-    i++;
+printf("%d | %s | %f \n", pack.x, pack.c, pack.y);
 }
-printf("Size = %d \n", i*sizeof(PACK));
+printf("Size = %ld\n", ftell(File));
 fclose(File);
 return 0;
 }
